@@ -1,0 +1,57 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body,
+#root {
+  background: #ffffff;
+  font-family: 'Noto Serif SC', 'Playfair Display', serif;
+}
+
+/* 中文字形(标题里与拉丁文混排时用) */
+.cn {
+  font-family: 'Noto Serif SC', serif;
+}
+
+/* 英文小标签:大写、字距、浅灰——双语层级里的“辅” */
+.label-en {
+  font-family: 'Playfair Display', serif;
+  text-transform: uppercase;
+  letter-spacing: 0.25em;
+  color: #9aa0a6;
+}
+
+/* 白底翻转版渐变标题:深色系,从浅灰到近黑 */
+.hero-heading {
+  background: linear-gradient(180deg, #2a2e35 0%, #0c0c0c 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* 关键词跑马灯:三段拼接,平移 1/3 实现无缝循环 */
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-33.333%);
+  }
+}
+.animate-marquee {
+  animation: marquee 28s linear infinite;
+}
+
+/* 尊重用户的“减少动态效果”系统偏好 */
+@media (prefers-reduced-motion: reduce) {
+  .animate-marquee {
+    animation: none;
+  }
+}
