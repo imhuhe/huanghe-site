@@ -60,8 +60,9 @@ export default function HeroSection() {
 
       {/* 主区:左签名式标题 / 右人像 */}
       <div className="relative flex-1 px-6 md:px-10">
-        {/* 签名层级:I am(小斜体) → 细分隔线 → 黄河(主角) → 滚动下划线 */}
-        <div className="absolute left-10 md:left-16 top-1/2 -translate-y-1/2 z-10">
+        {/* 签名层级:I am(小斜体) → 细分隔线 → 黄河(主角) → 滚动下划线 → 标语
+            手机视口下整块上移避开下方人像;sm+ 居中 */}
+        <div className="absolute left-10 md:left-16 top-[20%] sm:top-1/2 sm:-translate-y-1/2 z-10">
           {/* I am 小斜体标签 */}
           <FadeIn delay={0.15} y={20}>
             <p
@@ -108,6 +109,24 @@ export default function HeroSection() {
             className="origin-left bg-[#0C0C0C]/40 h-px mt-3 sm:mt-4 md:mt-5"
             style={{ scaleX: underlineScale, width: 'clamp(120px, 22vw, 320px)' }}
           />
+
+          {/* 标语作为签名的副标题(中英双语) */}
+          <FadeIn
+            as="div"
+            delay={1.4}
+            y={20}
+            className="mt-4 sm:mt-5 md:mt-6 max-w-[260px] sm:max-w-[340px] md:max-w-[420px]"
+          >
+            <p
+              className="cn text-[#0C0C0C] font-normal leading-snug"
+              style={{ fontSize: 'clamp(0.85rem, 1.4vw, 1.35rem)' }}
+            >
+              连接资本、产业与政商
+            </p>
+            <p className="label-en text-[0.62rem] sm:text-[0.7rem] leading-relaxed mt-2">
+              Connecting capital, industry, government &amp; business
+            </p>
+          </FadeIn>
         </div>
 
         {/* 人像(右下,静态) */}
@@ -123,25 +142,6 @@ export default function HeroSection() {
         </div>
       </div>
 
-      {/* 底部栏(标语) */}
-      <div className="px-6 md:px-10 pb-7 sm:pb-8 md:pb-10 z-20">
-        <FadeIn
-          as="div"
-          delay={0.35}
-          y={20}
-          className="max-w-[260px] sm:max-w-[340px] md:max-w-[420px]"
-        >
-          <p
-            className="cn text-[#0C0C0C] font-normal leading-snug"
-            style={{ fontSize: 'clamp(0.8rem, 1.4vw, 1.4rem)' }}
-          >
-            连接资本、产业与政商
-          </p>
-          <p className="label-en text-[0.62rem] sm:text-[0.7rem] leading-relaxed mt-2">
-            Connecting capital, industry &amp; government-business
-          </p>
-        </FadeIn>
-      </div>
     </section>
   )
 }

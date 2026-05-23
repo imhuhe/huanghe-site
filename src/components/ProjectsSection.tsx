@@ -34,7 +34,7 @@ const projects: Project[] = [
     nameEn: 'High-Purity Reagents',
     desc: '武汉弗顿高纯试剂项目，在成熟生产体系上推进产能扩张，规划年产 3.5 万吨，加速爬坡。',
     descEn:
-      'The Wuhan Fulton high-purity reagent project — a capacity expansion to 35,000 tons/year on an established production base, currently ramping up.',
+      'The Wuhan Fulton high-purity reagent project — expanding to 35,000 tons/year on an established production system, currently ramping up.',
     link: 'https://futon-investor-deck.netlify.app',
     images: { topLeft: reagent1, bottomLeft: reagent2, right: reagent3 },
   },
@@ -46,7 +46,7 @@ const projects: Project[] = [
     nameEn: 'Drone Industrial Park',
     desc: '围绕低空经济的政策、场景与产业链，推动从资本到项目落地。',
     descEn:
-      'Built around low-altitude economy policy, scenarios and the industry chain — driving from capital to project implementation.',
+      'Built around the policy, scenarios and value chain of the low-altitude economy — moving from capital to ground implementation.',
     images: { topLeft: drone1, bottomLeft: drone2, right: drone3 },
   },
   {

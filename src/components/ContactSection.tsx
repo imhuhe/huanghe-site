@@ -51,7 +51,7 @@ export default function ContactSection() {
           draggable={false}
         />
         <p className="text-[#6B7280] font-light text-[0.7rem] sm:text-xs uppercase tracking-[0.25em]">
-          © 2026 黄河 · Copyright · All Rights Reserved
+          Copyright © 2026 黄河 · All Rights Reserved
         </p>
       </FadeIn>
     </section>

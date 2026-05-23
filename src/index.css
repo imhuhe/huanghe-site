@@ -49,6 +49,18 @@ body,
   animation: marquee 28s linear infinite;
 }
 
+/* 速度按视口宽度分档:窄屏更快,保持像素速度大致一致 */
+@media (max-width: 639px) {
+  .animate-marquee {
+    animation-duration: 12s;
+  }
+}
+@media (min-width: 640px) and (max-width: 1023px) {
+  .animate-marquee {
+    animation-duration: 18s;
+  }
+}
+
 /* 尊重用户的“减少动态效果”系统偏好 */
 @media (prefers-reduced-motion: reduce) {
   .animate-marquee {

@@ -6,7 +6,7 @@ const bio =
   '拥有 20 年上市公司管理经验。如今作为独立项目推动者，专注于前沿科技产业落地。擅长在资本方、项目业主与政府之间搭建桥梁，把构想推进为可执行、可落地的真实项目。期待与志同道合者一起，做出有分量的事。'
 
 const bioEn =
-  '20 years of experience managing listed companies. Now an independent project operator focused on bringing frontier-technology industries to the ground. Skilled at building bridges between capital, project owners and government — turning ideas into executable, real-world projects. Looking forward to building something meaningful together.'
+  '20 years of experience managing listed companies. Now an independent project driver, focused on bringing frontier technologies to industrial scale. Skilled at bridging capital, project owners and government — turning ideas into viable, deployable projects. Looking forward to building something meaningful together.'
 
 export default function AboutSection() {
   return (
