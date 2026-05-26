@@ -1,7 +1,7 @@
 import { useRef } from 'react'
 import { motion, useScroll, useTransform } from 'framer-motion'
 import FadeIn from './FadeIn'
-import { LiveProjectButton } from './Buttons'
+import { LiveProjectButton, BriefButton } from './Buttons'
 import drone1 from '../assets/drone-1.jpg'
 import drone2 from '../assets/drone-2.jpg'
 import drone3 from '../assets/drone-3.jpg'
@@ -22,6 +22,7 @@ type Project = {
   desc: string
   descEn: string
   link?: string
+  briefHref?: string
   images?: ImageSet
 }
 
@@ -36,6 +37,7 @@ const projects: Project[] = [
     descEn:
       'The Wuhan Fulton high-purity reagent project — expanding to 35,000 tons/year on an established production system, currently ramping up.',
     link: 'https://futon-investor-deck.netlify.app',
+    briefHref: '/docs/260524_弗顿_高纯试剂项目研究快读.pdf',
     images: { topLeft: reagent1, bottomLeft: reagent2, right: reagent3 },
   },
   {
@@ -101,7 +103,10 @@ function Card({ project, index, total }: { project: Project; index: number; tota
               </span>
             </div>
           </div>
-          {project.link ? <LiveProjectButton href={project.link} /> : null}
+          <div className="flex items-center gap-2 sm:gap-3 flex-wrap">
+            {project.briefHref ? <BriefButton href={project.briefHref} /> : null}
+            {project.link ? <LiveProjectButton href={project.link} /> : null}
+          </div>
         </div>
 
         <p

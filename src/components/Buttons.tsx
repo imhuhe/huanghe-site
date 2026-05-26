@@ -31,3 +31,18 @@ export function LiveProjectButton({ href = '#', className = '' }: ButtonProps) {
     </a>
   )
 }
+
+// 研究快读 / Brief 下载按钮(浅底描边胶囊,与 LiveProjectButton 并列)
+export function BriefButton({ href = '#', className = '' }: ButtonProps) {
+  return (
+    <a
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+      className={`inline-flex items-baseline gap-2 rounded-full border border-[#0C0C0C]/30 text-[#0C0C0C] px-7 py-3 sm:px-9 sm:py-3.5 transition-colors duration-200 hover:border-[#0C0C0C] hover:bg-[#0C0C0C]/[0.04] ${className}`}
+    >
+      <span className="cn text-sm sm:text-base">研究快读</span>
+      <span className="text-[0.62em] uppercase tracking-[0.25em] opacity-50">Brief</span>
+    </a>
+  )
+}
