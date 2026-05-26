@@ -24,6 +24,26 @@ jobs:
 
       - run: npm run build
 
+      - name: Debug — verify token identity
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+        run: |
+          echo "Token length (chars):"
+          printf '%s' "$NETLIFY_AUTH_TOKEN" | wc -c
+          echo "Site ID:"
+          echo "$NETLIFY_SITE_ID"
+          echo "--- /user ---"
+          curl -sS -o /tmp/user.json -w "HTTP %{http_code}\n" \
+            -H "Authorization: Bearer $NETLIFY_AUTH_TOKEN" \
+            https://api.netlify.com/api/v1/user
+          cat /tmp/user.json | head -c 400 ; echo
+          echo "--- /sites/<id> ---"
+          curl -sS -o /tmp/site.json -w "HTTP %{http_code}\n" \
+            -H "Authorization: Bearer $NETLIFY_AUTH_TOKEN" \
+            "https://api.netlify.com/api/v1/sites/$NETLIFY_SITE_ID"
+          cat /tmp/site.json | head -c 400 ; echo
+
       - name: Deploy to Netlify
         env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
